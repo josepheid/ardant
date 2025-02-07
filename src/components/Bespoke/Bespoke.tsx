@@ -1,19 +1,24 @@
-import { Text, Center, VStack, Stack, Image } from "@chakra-ui/react";
-import ardentLogo from "../../assets/ardent.png";
+import { Text, Center, VStack, Stack } from "@chakra-ui/react";
+import woodwork2 from "../../assets/woodwork2.jpg";
+import woodwork from "../../assets/woodwork.jpg";
+import lobby from "../../assets/lobby.jpg";
+
+import Carousel from "../Carousel/Carousel";
 
 export default function Bespoke() {
+    const images = [woodwork2, woodwork, lobby];
     return (
         <Center
             id="bespoke"
             backgroundColor="white"
             py={{ base: "6rem", md: "8rem" }}
-            px={{ base: "4rem", md: "2rem" }}
+            px={{ base: "2rem", md: "2rem" }}
             minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
                 <VStack color={"black"} alignItems={"start"}>
                     <Text as="h1" fontSize={"2rem"} pb="1rem">
-                        ABOUT US
+                        BESPOKE
                     </Text>
                     <Text fontSize={"1rem"}>
                         Bespoke finishes bring an unparalleled level of
@@ -35,9 +40,7 @@ export default function Bespoke() {
                         visitors alike.
                     </Text>
                 </VStack>
-                <Center>
-                    <Image src={ardentLogo} />
-                </Center>
+                <Carousel images={images} />
             </Stack>
         </Center>
     );

@@ -13,11 +13,11 @@ export default function Residential() {
             id="residential"
             backgroundColor="black"
             py={{ base: "6rem", md: "8rem" }}
-            px={{ base: "4rem", md: "2rem" }}
+            px={{ base: "2rem", md: "2rem" }}
             minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
-                <VStack color={"white"} alignItems={"start"} width={"100%"}>
+                <VStack color={"white"} alignItems={"start"}>
                     <Text as="h1" fontSize={"2rem"} pb="1rem">
                         RESIDENTIAL
                     </Text>

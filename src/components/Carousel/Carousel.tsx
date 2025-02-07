@@ -10,7 +10,7 @@ const Carousel = ({ images }: { images: string[] }) => {
         const startTimer = () => {
             return setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 3000);
+            }, 15000);
         };
 
         const intervalId = startTimer();
@@ -24,7 +24,7 @@ const Carousel = ({ images }: { images: string[] }) => {
             clearInterval(timer);
             const newTimer = setInterval(() => {
                 setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-            }, 3000);
+            }, 15000);
             setTimer(newTimer);
         }
     }, [currentIndex]);

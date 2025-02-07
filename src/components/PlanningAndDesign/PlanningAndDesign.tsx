@@ -1,13 +1,17 @@
-import { Text, Center, VStack, Stack, Image } from "@chakra-ui/react";
-import ardentLogo from "../../assets/ardent.png";
+import { Text, Center, VStack, Stack } from "@chakra-ui/react";
+import drawing from "../../assets/drawing.jpg";
+import sketch from "../../assets/sketch.jpg";
+
+import Carousel from "../Carousel/Carousel";
 
 export default function PlanningAndDesign() {
+    const images = [drawing, sketch];
     return (
         <Center
             id="planning-and-design"
             backgroundColor="black"
             py={{ base: "6rem", md: "8rem" }}
-            px={{ base: "4rem", md: "2rem" }}
+            px={{ base: "2rem", md: "2rem" }}
             minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
@@ -36,9 +40,7 @@ export default function PlanningAndDesign() {
                         construction.
                     </Text>
                 </VStack>
-                <Center>
-                    <Image src={ardentLogo} />
-                </Center>
+                <Carousel images={images} />
             </Stack>
         </Center>
     );

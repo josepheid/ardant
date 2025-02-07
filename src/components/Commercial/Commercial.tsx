@@ -1,13 +1,16 @@
-import { Text, Center, VStack, Stack, Image } from "@chakra-ui/react";
-import ardentLogo from "../../assets/ardent.png";
+import { Text, Center, VStack, Stack } from "@chakra-ui/react";
+import office from "../../assets/office.jpg";
+import bathroom from "../../assets/bathroom.jpg";
+import Carousel from "../Carousel/Carousel";
 
 export default function Commercial() {
+    const images = [office, bathroom];
     return (
         <Center
             id="commercial"
             backgroundColor="white"
             py={{ base: "6rem", md: "8rem" }}
-            px={{ base: "4rem", md: "2rem" }}
+            px={{ base: "2rem", md: "2rem" }}
             minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
@@ -66,9 +69,7 @@ export default function Commercial() {
                         our quality, safety, and environmental standards.
                     </Text>
                 </VStack>
-                <Center>
-                    <Image src={ardentLogo} />
-                </Center>
+                <Carousel images={images} />
             </Stack>
         </Center>
     );
