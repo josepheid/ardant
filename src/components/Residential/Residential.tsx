@@ -1,7 +1,12 @@
-import { Text, Center, VStack, Stack, Image } from "@chakra-ui/react";
+import { Text, Center, VStack, Stack } from "@chakra-ui/react";
+
 import ardentLogo from "../../assets/ardent.png";
+import livingroomImage from "../../assets/livingroom.jpg";
+import Carousel from "../Carousel/Carousel";
 
 export default function Residential() {
+    const images = [ardentLogo, livingroomImage];
+
     return (
         <Center
             id="residential"
@@ -11,7 +16,7 @@ export default function Residential() {
             minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
-                <VStack color={"white"} alignItems={"start"}>
+                <VStack color={"white"} alignItems={"start"} width={"100%"}>
                     <Text as="h1" fontSize={"2rem"} pb="1rem">
                         RESIDENTIAL
                     </Text>
@@ -46,9 +51,7 @@ export default function Residential() {
                         offering access to live project data at any time.
                     </Text>
                 </VStack>
-                <Center>
-                    <Image src={ardentLogo} />
-                </Center>
+                <Carousel images={images} />
             </Stack>
         </Center>
     );

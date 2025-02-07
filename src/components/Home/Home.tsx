@@ -24,7 +24,7 @@ import { TransparentOverlay } from "../TransparentOverlay/TransparentOverlay";
 import { scroll } from "../../lib/helpers";
 // Settings for the slider
 const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
     fade: true,
     infinite: true,
