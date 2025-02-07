@@ -4,11 +4,10 @@ import {
     Text,
     IconButton,
     Stack,
-    Collapse,
     Image,
     BoxProps,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
 import logo from "../../assets/ardent.png";
 
@@ -100,10 +99,11 @@ export default function Header(props: BoxProps) {
                 width={{ base: "100%", md: "20%" }}
                 bg={"#000000b0"}
                 color={"white"}
+                maxHeight={show ? "500px" : "0"}
+                overflow="hidden"
+                transition="max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"
             >
-                <Collapse in={show}>
-                    <MobileNav />
-                </Collapse>
+                <MobileNav />
             </Box>
         </Box>
     );
@@ -124,13 +124,23 @@ const MobileNav = () => {
     );
 };
 
-const MobileNavItem = ({ label, href }: NavItem) => {
+const MobileNavItem = ({ label, href, children }: NavItem) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleClick = () => {
+        if (href) {
+            scroll(href);
+        }
+        if (children) {
+            setIsOpen(!isOpen);
+        }
+    };
     return (
         <Stack spacing={4}>
-            <Box
+            <Flex
                 py={2}
                 as="button"
-                onClick={() => scroll(href ?? "#")}
+                onClick={handleClick}
                 justifyContent="space-between"
                 alignItems="center"
                 _hover={{
@@ -138,7 +148,43 @@ const MobileNavItem = ({ label, href }: NavItem) => {
                 }}
             >
                 <Text fontWeight={500}>{label}</Text>
-            </Box>
+                {children && (
+                    <ChevronDownIcon
+                        transform={isOpen ? "rotate(180deg)" : "rotate(0)"}
+                        transition="transform 0.2s"
+                    />
+                )}
+            </Flex>
+            {children && (
+                <Box
+                    maxHeight={isOpen ? "500px" : "0"}
+                    overflow="hidden"
+                    transition="max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"
+                    opacity={isOpen ? 1 : 0}
+                >
+                    <Stack pl={4} spacing={2}>
+                        {children.map((child) => (
+                            <Box
+                                key={child.label}
+                                py={1}
+                                as="button"
+                                onClick={() => scroll(child.href ?? "#")}
+                                textAlign="left"
+                                transform={`translateY(${
+                                    isOpen ? "0" : "-10px"
+                                })`}
+                                opacity={isOpen ? 1 : 0}
+                                transition="transform 0.3s ease, opacity 0.3s ease"
+                                _hover={{
+                                    color: "gray.200",
+                                }}
+                            >
+                                <Text>{child.label}</Text>
+                            </Box>
+                        ))}
+                    </Stack>
+                </Box>
+            )}
         </Stack>
     );
 };
@@ -160,8 +206,25 @@ const NAV_ITEMS: Array<NavItem> = [
         href: "#aboutus",
     },
     {
-        label: "GALLERY",
-        href: "#gallery",
+        label: "SERVICES",
+        children: [
+            {
+                label: "Commercial Fit Outs",
+                href: "#commercial-fitouts",
+            },
+            {
+                label: "Office Refurbishments",
+                href: "#office-refurbishments",
+            },
+            {
+                label: "Interior Design",
+                href: "#interior-design",
+            },
+            {
+                label: "Project Management",
+                href: "#project-management",
+            },
+        ],
     },
     {
         label: "CONTACT",

@@ -15,7 +15,11 @@ import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 // And react-slick as our Carousel Lib
 import Slider from "react-slick";
 import Header from "../Header/Header";
-
+import officeImage from "../../assets/office.jpg";
+import drawingImage from "../../assets/drawing.jpg";
+import livingroomImage from "../../assets/livingroom.jpg";
+import woodwork2Image from "../../assets/woodwork2.jpg";
+import { TransparentOverlay } from "../TransparentOverlay/TransparentOverlay";
 // Settings for the slider
 const settings = {
     dots: true,
@@ -36,33 +40,37 @@ export default function Home() {
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
-    const top = useBreakpointValue({ base: "45%", md: "25%" });
+    const top = useBreakpointValue({ base: "40%", md: "25%" });
     const side = useBreakpointValue({ base: "30%", md: "40px" });
 
     // This list contains all the data for carousels
     // This can be static or loaded from a server
     const cards = [
         {
-            title: "Design Projects 1",
+            title: "Residential.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-            image: "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+            image: livingroomImage,
         },
         {
-            title: "Design Projects 2",
+            title: "Commercial.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-            image: "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
+            image: officeImage,
         },
         {
-            title: "Design Projects 3",
+            title: "Planning and design.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-            image: "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+            image: drawingImage,
+        },
+        {
+            title: "Bespoke.",
+            text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
+            image: woodwork2Image,
         },
     ];
 
     return (
         <>
             <Header zIndex={99} position={"absolute"} />
-
             <Box height={"100vh"} width={"full"} overflow={"hidden"} id="home">
                 {/* CSS files for react-slick */}
                 <link
@@ -85,8 +93,9 @@ export default function Home() {
                     transform={"translate(0%, -50%)"}
                     zIndex={2}
                     onClick={() => slider?.slickPrev()}
+                    _hover={{ background: "transparent" }}
                 >
-                    <BiLeftArrowAlt size="40px" />
+                    <BiLeftArrowAlt size="40px" color="white" />
                 </IconButton>
                 {/* Right Icon */}
                 <IconButton
@@ -98,8 +107,9 @@ export default function Home() {
                     transform={"translate(0%, -50%)"}
                     zIndex={2}
                     onClick={() => slider?.slickNext()}
+                    _hover={{ background: "transparent" }}
                 >
-                    <BiRightArrowAlt size="40px" />
+                    <BiRightArrowAlt size="40px" color="white" />
                 </IconButton>
                 {/* Slider */}
                 <Slider {...settings} ref={(slider) => setSlider(slider)}>
@@ -111,13 +121,16 @@ export default function Home() {
                             backgroundPosition="center"
                             backgroundRepeat="no-repeat"
                             backgroundSize="cover"
-                            backgroundImage={`url(${card.image})`}
+                            backgroundImage={card.image}
+                            backgroundColor={"black"}
                         >
-                            {/* This is the block you need to change, to customize the caption */}
+                            <TransparentOverlay />
+
                             <Container
                                 size="container.lg"
                                 height="100vh"
                                 position="relative"
+                                zIndex={2}
                             >
                                 <Stack
                                     spacing={6}
@@ -132,12 +145,13 @@ export default function Home() {
                                             md: "4xl",
                                             lg: "5xl",
                                         }}
+                                        color={"white"}
                                     >
                                         {card.title}
                                     </Heading>
                                     <Text
                                         fontSize={{ base: "md", lg: "lg" }}
-                                        color="GrayText"
+                                        color="white"
                                     >
                                         {card.text}
                                     </Text>
