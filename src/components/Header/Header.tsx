@@ -10,6 +10,7 @@ import {
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
 import logo from "../../assets/ardent.png";
+import { scroll } from "../../lib/helpers";
 
 export default function Header(props: BoxProps) {
     const [show, setShow] = useState(false);
@@ -107,11 +108,6 @@ export default function Header(props: BoxProps) {
             </Box>
         </Box>
     );
-}
-
-function scroll(id: string) {
-    const section = document.querySelector(id);
-    section?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 const MobileNav = () => {

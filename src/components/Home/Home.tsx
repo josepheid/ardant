@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
     Box,
     IconButton,
@@ -9,6 +9,7 @@ import {
     Heading,
     Text,
     Container,
+    Button,
 } from "@chakra-ui/react";
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -20,6 +21,7 @@ import drawingImage from "../../assets/drawing.jpg";
 import livingroomImage from "../../assets/livingroom.jpg";
 import woodwork2Image from "../../assets/woodwork2.jpg";
 import { TransparentOverlay } from "../TransparentOverlay/TransparentOverlay";
+import { scroll } from "../../lib/helpers";
 // Settings for the slider
 const settings = {
     dots: true,
@@ -50,23 +52,29 @@ export default function Home() {
             title: "Residential.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: livingroomImage,
+            id: "residential",
         },
         {
             title: "Commercial.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: officeImage,
+            id: "commercial",
         },
         {
             title: "Planning and design.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: drawingImage,
+            id: "planninganddesign",
         },
         {
             title: "Bespoke.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: woodwork2Image,
+            id: "bespoke",
         },
     ];
+
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
         <>
@@ -155,6 +163,60 @@ export default function Home() {
                                     >
                                         {card.text}
                                     </Text>
+                                    <Button
+                                        backgroundColor="transparent"
+                                        onClick={() => scroll(card.id)}
+                                        borderRadius="1px"
+                                        borderColor="white"
+                                        borderStyle="solid"
+                                        borderWidth="1px"
+                                        color="white"
+                                        width={{ base: "100%", md: "40%" }}
+                                        position="relative"
+                                        overflow="hidden"
+                                        _hover={{
+                                            backgroundColor: "transparent",
+                                        }}
+                                        onMouseEnter={() => setIsHovered(true)}
+                                        onMouseLeave={() => setIsHovered(false)}
+                                    >
+                                        <Box
+                                            position="absolute"
+                                            top="0"
+                                            left="0"
+                                            right="0"
+                                            bottom="0"
+                                            display="flex"
+                                            alignItems="center"
+                                            justifyContent="center"
+                                            transform={`perspective(400px) rotateX(${
+                                                isHovered ? "90deg" : "0deg"
+                                            })`}
+                                            transformOrigin="center bottom"
+                                            transition="transform 0.4s ease"
+                                            opacity={isHovered ? 0 : 1}
+                                        >
+                                            FIND OUT MORE
+                                        </Box>
+                                        <Box
+                                            position="absolute"
+                                            top="0"
+                                            left="0"
+                                            right="0"
+                                            bottom="0"
+                                            display="flex"
+                                            alignItems="center"
+                                            justifyContent="center"
+                                            transform={`perspective(400px) rotateX(${
+                                                isHovered ? "0deg" : "-90deg"
+                                            })`}
+                                            transformOrigin="center top"
+                                            transition="transform 0.4s ease"
+                                            opacity={isHovered ? 1 : 0}
+                                        >
+                                            TAKE ME THERE
+                                        </Box>
+                                    </Button>
                                 </Stack>
                             </Container>
                         </Box>
