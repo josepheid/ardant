@@ -42,7 +42,7 @@ const Carousel = ({ images }: { images: string[] }) => {
     return (
         <Box
             width={"100%"}
-            maxWidth="800px"
+            minWidth={{ base: "auto", md: "40vw" }}
             position="relative"
             display="flex"
             justifyContent="center"

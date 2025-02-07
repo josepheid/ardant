@@ -2,11 +2,12 @@ import { Text, Center, VStack, Stack } from "@chakra-ui/react";
 import woodwork2 from "../../assets/woodwork2.jpg";
 import woodwork from "../../assets/woodwork.jpg";
 import lobby from "../../assets/lobby.jpg";
+import homeoffice from "../../assets/homeoffice.jpg";
 
 import Carousel from "../Carousel/Carousel";
 
 export default function Bespoke() {
-    const images = [woodwork2, woodwork, lobby];
+    const images = [woodwork2, woodwork, lobby, homeoffice];
     return (
         <Center
             id="bespoke"
