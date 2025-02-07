@@ -4,18 +4,18 @@ import ardentLogo from "../../assets/ardent.png";
 export default function AboutUs() {
     return (
         <Center
-            id="aboutus"
+            id="about-us"
             backgroundColor="white"
             py={{ base: "4rem", md: "2rem" }}
             px={{ base: "4rem", md: "2rem" }}
-            height={{ base: "auto", md: "100vh" }}
+            minHeight={"100vh"}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
                 <VStack color={"black"} alignItems={"start"}>
                     <Text as="h1" fontSize={"2rem"} pb="1rem">
                         ABOUT US
                     </Text>
-                    <Text color="brand.light" fontSize={"1.25rem"}>
+                    <Text fontSize={"1rem"}>
                         Here at Ardant Group, we specialise in the development
                         and renovation of homes and properties to the highest
                         standard. Founded in 2016, we are a dynamic, family-run
@@ -23,7 +23,7 @@ export default function AboutUs() {
                         with over 50 years worth of knowledge and experience in
                         the industry.
                     </Text>
-                    <Text color="brand.light" fontSize={"1.25rem"}>
+                    <Text fontSize={"1rem"}>
                         We pride ourselves on having established a culture based
                         on honesty, reliability and trust. We continuously
                         strive to deliver an unrivalled quality of service and

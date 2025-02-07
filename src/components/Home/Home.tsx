@@ -42,7 +42,7 @@ export default function Home() {
 
     // These are the breakpoints which changes the position of the
     // buttons as the screen size changes
-    const top = useBreakpointValue({ base: "40%", md: "25%" });
+    const top = useBreakpointValue({ base: "10%", md: "8.5%" });
     const side = useBreakpointValue({ base: "30%", md: "40px" });
 
     // This list contains all the data for carousels
@@ -52,25 +52,25 @@ export default function Home() {
             title: "Residential.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: livingroomImage,
-            id: "residential",
+            id: "#residential",
         },
         {
             title: "Commercial.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: officeImage,
-            id: "commercial",
+            id: "#commercial",
         },
         {
             title: "Planning and design.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: drawingImage,
-            id: "planninganddesign",
+            id: "#planning-and-design",
         },
         {
             title: "Bespoke.",
             text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
             image: woodwork2Image,
-            id: "bespoke",
+            id: "#bespoke",
         },
     ];
 

@@ -97,7 +97,7 @@ export default function Header(props: BoxProps) {
                 right={"0%"}
                 position={"absolute"}
                 zIndex={99}
-                width={{ base: "100%", md: "20%" }}
+                width={{ base: "100%", md: "25%" }}
                 bg={"#000000b0"}
                 color={"white"}
                 maxHeight={show ? "500px" : "0"}
@@ -201,26 +201,26 @@ const NAV_ITEMS: Array<NavItem> = [
     },
     {
         label: "ABOUT US",
-        href: "#aboutus",
+        href: "#about-us",
     },
     {
         label: "SERVICES",
         children: [
             {
-                label: "Commercial Fit Outs",
-                href: "#commercial-fitouts",
+                label: "RESIDENTIAL",
+                href: "#residential",
             },
             {
-                label: "Office Refurbishments",
-                href: "#office-refurbishments",
+                label: "COMMERCIAL",
+                href: "#commercial",
             },
             {
-                label: "Interior Design",
-                href: "#interior-design",
+                label: "PLANNING AND DESIGN",
+                href: "#planning-and-design",
             },
             {
-                label: "Project Management",
-                href: "#project-management",
+                label: "BESPOKE",
+                href: "#bespoke",
             },
         ],
     },
