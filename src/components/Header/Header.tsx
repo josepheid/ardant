@@ -132,9 +132,9 @@ const MobileNavItem = ({ label, href, children }: NavItem) => {
         }
     };
     return (
-        <Stack spacing={4}>
+        <Box>
             <Flex
-                py={2}
+                py={1}
                 as="button"
                 onClick={handleClick}
                 justifyContent="space-between"
@@ -143,7 +143,9 @@ const MobileNavItem = ({ label, href, children }: NavItem) => {
                     textDecoration: "none",
                 }}
             >
-                <Text fontWeight={500}>{label}</Text>
+                <Text fontWeight={500} mr={2}>
+                    {label}
+                </Text>
                 {children && (
                     <ChevronDownIcon
                         transform={isOpen ? "rotate(180deg)" : "rotate(0)"}
@@ -181,7 +183,7 @@ const MobileNavItem = ({ label, href, children }: NavItem) => {
                     </Stack>
                 </Box>
             )}
-        </Stack>
+        </Box>
     );
 };
 

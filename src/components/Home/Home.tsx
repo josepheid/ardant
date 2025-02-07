@@ -133,19 +133,21 @@ export default function Home() {
                             backgroundColor={"black"}
                         >
                             <TransparentOverlay />
-
                             <Container
                                 size="container.lg"
                                 height="100vh"
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
                                 position="relative"
                                 zIndex={2}
                             >
                                 <Stack
                                     spacing={6}
                                     maxW={"lg"}
-                                    position="absolute"
-                                    top="50%"
-                                    transform="translate(0, -50%)"
+                                    width="100%"
+                                    position="relative"
+                                    zIndex={3}
                                 >
                                     <Heading
                                         fontSize={{

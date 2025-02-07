@@ -1,22 +1,17 @@
 import { Text, Center, VStack, Stack, Image } from "@chakra-ui/react";
 import ardentLogo from "../../assets/ardent.png";
-import drawingImage from "../../assets/drawing.jpg";
 
 export default function AboutUs() {
     return (
         <Center
             id="aboutus"
-            background="brand.navy"
-            py="2rem"
-            px="1rem"
+            backgroundColor="white"
+            py={{ base: "4rem", md: "2rem" }}
+            px={{ base: "4rem", md: "2rem" }}
             height={{ base: "auto", md: "100vh" }}
         >
             <Stack direction={{ base: "column", md: "row" }} gap="10">
-                <VStack>
-                    <Image src={ardentLogo} />
-                    <Image src={drawingImage} />
-                </VStack>
-                <VStack>
+                <VStack color={"black"} alignItems={"start"}>
                     <Text as="h1" fontSize={"2rem"} pb="1rem">
                         ABOUT US
                     </Text>
@@ -38,6 +33,9 @@ export default function AboutUs() {
                         cater to any requirement.
                     </Text>
                 </VStack>
+                <Center>
+                    <Image src={ardentLogo} />
+                </Center>
             </Stack>
         </Center>
     );
