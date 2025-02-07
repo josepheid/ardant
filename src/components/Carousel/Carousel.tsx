@@ -4,14 +4,30 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Carousel = ({ images }: { images: string[] }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [timer, setTimer] = useState<number | null>(null);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 15000);
+        const startTimer = () => {
+            return setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            }, 3000);
+        };
+
+        const intervalId = startTimer();
+        setTimer(intervalId);
 
         return () => clearInterval(intervalId);
     }, [images.length]);
+
+    useEffect(() => {
+        if (timer) {
+            clearInterval(timer);
+            const newTimer = setInterval(() => {
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+            }, 3000);
+            setTimer(newTimer);
+        }
+    }, [currentIndex]);
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -50,17 +66,20 @@ const Carousel = ({ images }: { images: string[] }) => {
 
             <Box
                 width="100%"
-                height="auto"
+                height="500px"
                 position="relative"
                 overflow="hidden"
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
             >
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={images[currentIndex]}
                         style={{
                             width: "100%",
-                            height: "auto",
-                            position: "relative",
+                            height: "100%",
+                            position: "absolute",
                         }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -70,9 +89,9 @@ const Carousel = ({ images }: { images: string[] }) => {
                         <Image
                             src={images[currentIndex]}
                             alt="carousel image"
-                            objectFit="contain"
+                            objectFit="cover"
                             width="100%"
-                            height="auto"
+                            height="100%"
                         />
                     </motion.div>
                 </AnimatePresence>

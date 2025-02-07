@@ -1,11 +1,12 @@
 import { Text, Center, VStack, Stack } from "@chakra-ui/react";
 
-import ardentLogo from "../../assets/ardent.png";
+import wardrobe from "../../assets/wardrobe.jpg";
+import bathroom2 from "../../assets/bathroom2.jpg";
 import livingroomImage from "../../assets/livingroom.jpg";
 import Carousel from "../Carousel/Carousel";
 
 export default function Residential() {
-    const images = [ardentLogo, livingroomImage];
+    const images = [livingroomImage, bathroom2, wardrobe];
 
     return (
         <Center
