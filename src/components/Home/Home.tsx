@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
     Box,
     IconButton,
-    useBreakpointValue,
     Stack,
     Heading,
     Text,
@@ -39,11 +38,6 @@ export default function Home() {
     // As we have used custom buttons, we need a reference variable to
     // change the state
     const [slider, setSlider] = React.useState<Slider | null>(null);
-
-    // These are the breakpoints which changes the position of the
-    // buttons as the screen size changes
-    const top = useBreakpointValue({ base: "10%", md: "8.5%" });
-    const side = useBreakpointValue({ base: "30%", md: "40px" });
 
     // This list contains all the data for carousels
     // This can be static or loaded from a server
@@ -95,11 +89,11 @@ export default function Home() {
                 <IconButton
                     aria-label="left-arrow"
                     variant="ghost"
-                    position="absolute"
-                    left={side}
-                    top={top}
-                    transform={"translate(0%, -50%)"}
-                    zIndex={2}
+                    position="fixed"
+                    left="5%"
+                    top={{ base: "80%", md: "50%" }}
+                    transform="translate(0, -50%)"
+                    zIndex={10}
                     onClick={() => slider?.slickPrev()}
                     _hover={{ background: "transparent" }}
                 >
@@ -109,11 +103,11 @@ export default function Home() {
                 <IconButton
                     aria-label="right-arrow"
                     variant="ghost"
-                    position="absolute"
-                    right={side}
-                    top={top}
-                    transform={"translate(0%, -50%)"}
-                    zIndex={2}
+                    position="fixed"
+                    right="5%"
+                    top={{ base: "80%", md: "50%" }}
+                    transform="translate(0, -50%)"
+                    zIndex={10}
                     onClick={() => slider?.slickNext()}
                     _hover={{ background: "transparent" }}
                 >
