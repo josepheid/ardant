@@ -73,7 +73,14 @@ export default function Home() {
     return (
         <>
             <Header zIndex={99} position={"absolute"} />
-            <Box height={"100vh"} width={"full"} overflow={"hidden"} id="home">
+            {/* Ensure arrows stay inside Home section */}
+            <Box
+                height={"100vh"}
+                width={"full"}
+                overflow={"hidden"}
+                id="home"
+                position="relative"
+            >
                 {/* CSS files for react-slick */}
                 <link
                     rel="stylesheet"
@@ -85,34 +92,46 @@ export default function Home() {
                     type="text/css"
                     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
                 />
-                {/* Left Icon */}
-                <IconButton
-                    aria-label="left-arrow"
-                    variant="ghost"
-                    position="fixed"
-                    left="5%"
-                    top={{ base: "80%", md: "50%" }}
-                    transform="translate(0, -50%)"
-                    zIndex={10}
-                    onClick={() => slider?.slickPrev()}
-                    _hover={{ background: "transparent" }}
+
+                {/* Arrow container (must be inside `#home`) */}
+                <Box
+                    position="absolute"
+                    width="full"
+                    height="full"
+                    top="0"
+                    left="0"
+                    zIndex={2}
                 >
-                    <BiLeftArrowAlt size="40px" color="white" />
-                </IconButton>
-                {/* Right Icon */}
-                <IconButton
-                    aria-label="right-arrow"
-                    variant="ghost"
-                    position="fixed"
-                    right="5%"
-                    top={{ base: "80%", md: "50%" }}
-                    transform="translate(0, -50%)"
-                    zIndex={10}
-                    onClick={() => slider?.slickNext()}
-                    _hover={{ background: "transparent" }}
-                >
-                    <BiRightArrowAlt size="40px" color="white" />
-                </IconButton>
+                    {/* Left Arrow */}
+                    <IconButton
+                        aria-label="left-arrow"
+                        variant="ghost"
+                        position="absolute"
+                        left="40px"
+                        top={{ base: "80%", md: "50%" }}
+                        transform={"translateY(-50%)"}
+                        zIndex={3}
+                        onClick={() => slider?.slickPrev()}
+                        _hover={{ background: "transparent" }}
+                    >
+                        <BiLeftArrowAlt size="40px" color="white" />
+                    </IconButton>
+                    {/* Right Arrow */}
+                    <IconButton
+                        aria-label="right-arrow"
+                        variant="ghost"
+                        position="absolute"
+                        right="40px"
+                        top={{ base: "80%", md: "50%" }}
+                        transform={"translateY(-50%)"}
+                        zIndex={3}
+                        onClick={() => slider?.slickNext()}
+                        _hover={{ background: "transparent" }}
+                    >
+                        <BiRightArrowAlt size="40px" color="white" />
+                    </IconButton>
+                </Box>
+
                 {/* Slider */}
                 <Slider {...settings} ref={(slider) => setSlider(slider)}>
                     {cards.map((card, index) => (
