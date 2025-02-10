@@ -18,22 +18,19 @@ export default function Layout({
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
-    const xVal = backgroundColour === "white" ? -50 : 50;
+    const xVal = backgroundColour === "white" ? "-5vw" : "5vw";
     return (
         <Center
             id={id}
             backgroundColor={backgroundColour}
             py={{ base: "4rem", md: "2rem" }}
-            px={{ base: "4rem", md: "2rem" }}
+            px={{ base: "1rem", md: "2rem" }}
             minHeight={"100vh"}
         >
             <motion.div
                 ref={ref}
-                initial={{
-                    opacity: 0,
-                    x: xVal,
-                }} // Start off-screen (left side)
-                animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : xVal }}
+                initial={{ opacity: 0, x: xVal }}
+                animate={isInView ? { opacity: 1, x: "0vw" } : {}}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <Stack direction={{ base: "column", md: "row" }} gap="10">
