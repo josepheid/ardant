@@ -109,7 +109,7 @@ export default function Home() {
                         variant="ghost"
                         position="absolute"
                         left="40px"
-                        top="50%"
+                        top={{ base: "75%", md: "50%" }}
                         transform={"translateY(-50%)"}
                         zIndex={3} // Above slider
                         onClick={() => slider?.slickPrev()}
@@ -125,7 +125,7 @@ export default function Home() {
                         variant="ghost"
                         position="absolute"
                         right="40px"
-                        top="50%"
+                        top={{ base: "75%", md: "50%" }}
                         transform={"translateY(-50%)"}
                         zIndex={3} // Above slider
                         onClick={() => slider?.slickNext()}
@@ -184,7 +184,10 @@ export default function Home() {
                                     </Text>
                                     <Button
                                         backgroundColor="transparent"
-                                        onClick={() => scroll(card.id)}
+                                        onClick={() => {
+                                            console.log(card.id);
+                                            scroll(card.id);
+                                        }}
                                         borderRadius="1px"
                                         borderColor="white"
                                         borderStyle="solid"
