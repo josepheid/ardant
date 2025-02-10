@@ -100,7 +100,8 @@ export default function Home() {
                     height="full"
                     top="0"
                     left="0"
-                    zIndex={2}
+                    zIndex={2} // Lower than button but still above slider
+                    pointerEvents="none" // Makes sure it doesn't block clicks
                 >
                     {/* Left Arrow */}
                     <IconButton
@@ -108,25 +109,28 @@ export default function Home() {
                         variant="ghost"
                         position="absolute"
                         left="40px"
-                        top={{ base: "80%", md: "50%" }}
+                        top="50%"
                         transform={"translateY(-50%)"}
-                        zIndex={3}
+                        zIndex={3} // Above slider
                         onClick={() => slider?.slickPrev()}
                         _hover={{ background: "transparent" }}
+                        pointerEvents="auto" // Allows clicking the arrows
                     >
                         <BiLeftArrowAlt size="40px" color="white" />
                     </IconButton>
+
                     {/* Right Arrow */}
                     <IconButton
                         aria-label="right-arrow"
                         variant="ghost"
                         position="absolute"
                         right="40px"
-                        top={{ base: "80%", md: "50%" }}
+                        top="50%"
                         transform={"translateY(-50%)"}
-                        zIndex={3}
+                        zIndex={3} // Above slider
                         onClick={() => slider?.slickNext()}
                         _hover={{ background: "transparent" }}
+                        pointerEvents="auto" // Allows clicking the arrows
                     >
                         <BiRightArrowAlt size="40px" color="white" />
                     </IconButton>
