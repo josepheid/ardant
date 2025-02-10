@@ -10,7 +10,7 @@ export default function Commercial() {
             textColour="black"
             backgroundColour="white"
             images={images}
-            id="#commercial"
+            id="commercial"
         >
             <Text as="h1" fontSize={"2rem"} pb="1rem">
                 COMMERCIAL

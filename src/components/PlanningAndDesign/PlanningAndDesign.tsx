@@ -11,7 +11,7 @@ export default function PlanningAndDesign() {
             textColour="white"
             backgroundColour="black"
             images={images}
-            id="#planning-and-design"
+            id="planning-and-design"
         >
             <Text as="h1" fontSize={"2rem"} pb="1rem">
                 PLANNING AND DESIGN

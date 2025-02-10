@@ -13,7 +13,7 @@ export default function Residential() {
             textColour="white"
             backgroundColour="black"
             images={images}
-            id="#residential"
+            id="residential"
         >
             <Text as="h1" fontSize={"2rem"} pb="1rem">
                 RESIDENTIAL

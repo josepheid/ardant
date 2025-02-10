@@ -13,7 +13,7 @@ export default function Bespoke() {
             textColour="black"
             backgroundColour="white"
             images={images}
-            id="#bespoke"
+            id="bespoke"
         >
             <Text as="h1" fontSize={"2rem"} pb="1rem">
                 BESPOKE

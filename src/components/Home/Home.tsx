@@ -185,7 +185,6 @@ export default function Home() {
                                     <Button
                                         backgroundColor="transparent"
                                         onClick={() => {
-                                            console.log(card.id);
                                             scroll(card.id);
                                         }}
                                         borderRadius="1px"

@@ -8,7 +8,7 @@ export default function AboutUs() {
             backgroundColour="white"
             textColour="black"
             images={[ardentLogo]}
-            id="#about-us"
+            id="about-us"
         >
             <>
                 <Text as="h1" fontSize={"2rem"} pb="1rem">
