@@ -2,3 +2,7 @@
     font-family: "Renner";
     src: local("Renner"), url("./assets/renner.ttf");
 }
+
+body {
+    overflow-x: hidden;
+}

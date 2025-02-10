@@ -18,7 +18,7 @@ export default function Layout({
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
-    const xVal = backgroundColour === "white" ? -200 : 200;
+    const xVal = backgroundColour === "white" ? -50 : 50;
     return (
         <Center
             id={id}
