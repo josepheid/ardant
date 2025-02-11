@@ -18,7 +18,6 @@ export default function Layout({
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
-    const xVal = backgroundColour === "white" ? "-5vw" : "5vw";
     return (
         <Center
             id={id}
@@ -29,8 +28,8 @@ export default function Layout({
         >
             <motion.div
                 ref={ref}
-                initial={{ opacity: 0, x: xVal }}
-                animate={isInView ? { opacity: 1, x: "0vw" } : {}}
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 1.2, ease: "easeOut" }}
             >
                 <Stack direction={{ base: "column", md: "row" }} gap="10">
