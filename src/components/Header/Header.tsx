@@ -104,33 +104,48 @@ export default function Header(props: BoxProps) {
                 overflow="hidden"
                 transition="max-height 0.3s ease-in-out, opacity 0.3s ease-in-out"
             >
-                <MobileNav />
+                <MobileNav setShow={setShow} />
             </Box>
         </Box>
     );
 }
 
-const MobileNav = () => {
+const MobileNav = ({ setShow }: { setShow: (show: boolean) => void }) => {
     return (
         <Stack p={4}>
             {NAV_ITEMS.map((navItem) => (
-                <MobileNavItem key={navItem.label} {...navItem} />
+                <MobileNavItem
+                    key={navItem.label}
+                    {...navItem}
+                    setShow={setShow}
+                />
             ))}
         </Stack>
     );
 };
 
-const MobileNavItem = ({ label, href, children }: NavItem) => {
+interface MobileNavItemProps extends NavItem {
+    setShow: (show: boolean) => void;
+}
+
+const MobileNavItem = ({
+    label,
+    href,
+    children,
+    setShow,
+}: MobileNavItemProps) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleClick = () => {
         if (href) {
             scroll(href);
+            setShow(false);
         }
         if (children) {
             setIsOpen(!isOpen);
         }
     };
+
     return (
         <Box>
             <Flex
@@ -166,7 +181,11 @@ const MobileNavItem = ({ label, href, children }: NavItem) => {
                                 key={child.label}
                                 py={1}
                                 as="button"
-                                onClick={() => scroll(child.href ?? "#")}
+                                onClick={() => {
+                                    scroll(child.href ?? "#");
+                                    setShow(false);
+                                    setIsOpen(false);
+                                }}
                                 textAlign="left"
                                 transform={`translateY(${
                                     isOpen ? "0" : "-10px"
