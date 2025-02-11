@@ -1,7 +1,7 @@
 import { Box } from "@chakra-ui/react";
 
 export const TransparentOverlay = ({
-    backgroundColor = "rgba(0, 0, 0, 0.5)", // Default semi-transparent black
+    backgroundColor = "rgba(0, 0, 0, 0.8)", // Default semi-transparent black
     zIndex = 1,
 }) => {
     return (

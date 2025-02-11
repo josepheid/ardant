@@ -244,7 +244,7 @@ const NAV_ITEMS: Array<NavItem> = [
         ],
     },
     {
-        label: "CONTACT",
-        href: "#contact",
+        label: "CONTACT US",
+        href: "#contact-us",
     },
 ];
