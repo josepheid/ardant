@@ -109,7 +109,7 @@ export default function Home() {
                         variant="ghost"
                         position="absolute"
                         left="40px"
-                        top={{ base: "85%", md: "50%" }}
+                        top={{ base: "82.5%", md: "50%" }}
                         transform={"translateY(-50%)"}
                         zIndex={3} // Above slider
                         onClick={() => slider?.slickPrev()}
@@ -125,7 +125,7 @@ export default function Home() {
                         variant="ghost"
                         position="absolute"
                         right="40px"
-                        top={{ base: "85%", md: "50%" }}
+                        top={{ base: "82.5%", md: "50%" }}
                         transform={"translateY(-50%)"}
                         zIndex={3} // Above slider
                         onClick={() => slider?.slickNext()}
