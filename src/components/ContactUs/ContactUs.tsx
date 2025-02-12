@@ -25,6 +25,10 @@ export default function ContactUs() {
                         info@ardantgroup.co.uk
                     </Link>
                 </Text>
+                <Text fontSize={"1rem"}>
+                    <strong>Telephone:</strong>{" "}
+                    <Link href={"tel:02080874206"}>020 8087 4206</Link>
+                </Text>
                 <Text>
                     <strong>Address: </strong> 1 Sopwith Crescent, Wickford,
                     Essex, United Kingdom, SS11 8YU
