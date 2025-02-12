@@ -1,7 +1,8 @@
 import { Center, Image, Stack, VStack } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import Carousel from "../Carousel/Carousel";
+import { PixelColourContext } from "../../App";
 
 export default function Layout({
     textColour,
@@ -18,6 +19,8 @@ export default function Layout({
 }) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: false, amount: 0.2 });
+    const state = useContext(PixelColourContext);
+
     return (
         <Center
             id={id}
@@ -25,6 +28,7 @@ export default function Layout({
             py={{ base: "6rem", md: "2rem" }}
             px={{ base: "1rem", md: "2rem" }}
             minHeight={"100vh"}
+            onMouseEnter={() => state.setPixelColour(textColour)}
         >
             <motion.div
                 ref={ref}

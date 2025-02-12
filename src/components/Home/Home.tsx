@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
     Box,
     IconButton,
@@ -21,6 +21,7 @@ import livingroomImage from "../../assets/livingroom.jpg";
 import woodwork2Image from "../../assets/woodwork2.jpg";
 import { TransparentOverlay } from "../TransparentOverlay/TransparentOverlay";
 import { scroll } from "../../lib/helpers";
+import { PixelColourContext } from "../../App";
 // Settings for the slider
 const settings = {
     dots: false,
@@ -69,6 +70,7 @@ export default function Home() {
     ];
 
     const [isHovered, setIsHovered] = useState(false);
+    const state = useContext(PixelColourContext);
 
     return (
         <>
@@ -80,6 +82,7 @@ export default function Home() {
                 overflow={"hidden"}
                 id="home"
                 position="relative"
+                onMouseEnter={() => state.setPixelColour("white")}
             >
                 {/* CSS files for react-slick */}
                 <link
