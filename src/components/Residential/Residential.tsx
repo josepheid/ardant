@@ -1,28 +1,18 @@
 import { Text } from "@chakra-ui/react";
 
-import wardrobe from "../../assets/wardrobe.jpg";
-import bathroom2 from "../../assets/bathroom2.jpg";
-import livingroomImage from "../../assets/livingroom.jpg";
-import res1 from "../../assets/res1.jpg";
-import res2 from "../../assets/res2.jpg";
-import res3 from "../../assets/res3.jpg";
-import res4 from "../../assets/res4.jpg";
-import res5 from "../../assets/res5.jpg";
-import residential from "../../assets/residential.jpg";
-
 import Layout from "../Layout/Layout";
 
 export default function Residential() {
     const images = [
-        livingroomImage,
-        bathroom2,
-        wardrobe,
-        res1,
-        res2,
-        res3,
-        res4,
-        res5,
-        residential,
+        "livingroom.jpg",
+        "bathroom2.jpg",
+        "wardrobe.jpg",
+        "res1.jpg",
+        "res2.jpg",
+        "res3.jpg",
+        "res4.jpg",
+        "res5.jpg",
+        "residential.jpg",
     ];
 
     return (

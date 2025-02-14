@@ -1,13 +1,14 @@
 import { Text } from "@chakra-ui/react";
-import woodwork2 from "../../assets/woodwork2.jpg";
-import woodwork from "../../assets/woodwork.jpg";
-import lobby from "../../assets/lobby.jpg";
-import homeoffice from "../../assets/homeoffice.jpg";
 
 import Layout from "../Layout/Layout";
 
 export default function Bespoke() {
-    const images = [woodwork2, woodwork, lobby, homeoffice];
+    const images = [
+        "woodwork2.jpg",
+        "woodwork.jpg",
+        "lobby.jpg",
+        "homeoffice.jpg",
+    ];
     return (
         <Layout
             textColour="black"

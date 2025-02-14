@@ -1,13 +1,9 @@
 import { Text } from "@chakra-ui/react";
-import office from "../../assets/office.jpg";
-import bathroom from "../../assets/bathroom.jpg";
-import office2 from "../../assets/office2.jpg";
-import chairs from "../../assets/chairs.jpg";
 
 import Layout from "../Layout/Layout";
 
 export default function Commercial() {
-    const images = [office, bathroom, office2, chairs];
+    const images = ["office.jpg", "bathroom.jpg", "office2.jpg", "chairs.jpg"];
     return (
         <Layout
             textColour="black"

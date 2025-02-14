@@ -42,7 +42,7 @@ export default function Layout({
                     </VStack>
                     {images.length === 1 ? (
                         <Center>
-                            <Image src={images[0]} />
+                            <Image src={images[0]} alt={images[0]} />
                         </Center>
                     ) : (
                         <Carousel images={images} />

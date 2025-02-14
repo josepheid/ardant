@@ -88,7 +88,7 @@ const Carousel = ({ images }: { images: string[] }) => {
                     >
                         <Image
                             src={images[currentIndex]}
-                            alt="carousel image"
+                            alt={`carousel image - ${images[currentIndex]}`}
                             objectFit="cover"
                             width="100%"
                             height="100%"

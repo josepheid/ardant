@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
-import logo from "../../assets/ardant.png";
 import { scroll } from "../../lib/helpers";
 
 export default function Header(props: BoxProps) {
@@ -29,7 +28,7 @@ export default function Header(props: BoxProps) {
                     justifyContent={"space-between"}
                 >
                     <Image
-                        src={logo}
+                        src={"ardant.png"}
                         height={"6rem"}
                         padding={"1rem"}
                         backgroundColor={{

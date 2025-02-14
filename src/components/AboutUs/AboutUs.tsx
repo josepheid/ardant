@@ -1,13 +1,12 @@
 import { Text } from "@chakra-ui/react";
 import Layout from "../Layout/Layout";
-import ardantLogo from "../../assets/ardant.png";
 
 export default function AboutUs() {
     return (
         <Layout
             backgroundColour="white"
             textColour="black"
-            images={[ardantLogo]}
+            images={["/ardant.png"]}
             id="about-us"
         >
             <>

@@ -1,11 +1,9 @@
 import { Text } from "@chakra-ui/react";
-import drawing from "../../assets/drawing.jpg";
-import sketch from "../../assets/sketch.jpg";
 
 import Layout from "../Layout/Layout";
 
 export default function PlanningAndDesign() {
-    const images = [drawing, sketch];
+    const images = ["drawing.jpg", "sketch.jpg"];
     return (
         <Layout
             textColour="white"
