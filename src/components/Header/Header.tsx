@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useRef, useState } from "react";
-import logo from "../../assets/ardent.png";
+import logo from "../../assets/ardant.png";
 import { scroll } from "../../lib/helpers";
 
 export default function Header(props: BoxProps) {
