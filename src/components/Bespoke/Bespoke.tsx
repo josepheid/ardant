@@ -8,6 +8,8 @@ export default function Bespoke() {
         "woodwork.jpg",
         "lobby.jpg",
         "homeoffice.jpg",
+        "b2.jpg",
+        "bespoke.jpg",
     ];
     return (
         <Layout

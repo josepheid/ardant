@@ -7,6 +7,7 @@ import Home from "./components/Home/Home";
 import PixelTrail from "./components/PixelTrail/PixelTrail";
 import PlanningAndDesign from "./components/PlanningAndDesign/PlanningAndDesign";
 import Residential from "./components/Residential/Residential";
+import Accreditations from "./components/Accreditations/Accreditations";
 
 interface PixelColourContextType {
     pixelColour: string;
@@ -53,6 +54,7 @@ function App() {
             <Commercial />
             <PlanningAndDesign />
             <Bespoke />
+            <Accreditations />
             <ContactUs />
         </PixelColourContextProvider>
     );

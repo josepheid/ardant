@@ -13,7 +13,7 @@ export default function Layout({
 }: {
     textColour: "black" | "white";
     backgroundColour: "black" | "white";
-    images: string[];
+    images?: string[];
     id: string;
     children: JSX.Element[] | JSX.Element;
 }) {
@@ -40,13 +40,14 @@ export default function Layout({
                     <VStack color={textColour} alignItems={"start"}>
                         {children}
                     </VStack>
-                    {images.length === 1 ? (
-                        <Center>
-                            <Image src={images[0]} alt={images[0]} />
-                        </Center>
-                    ) : (
-                        <Carousel images={images} />
-                    )}
+                    {images &&
+                        (images.length === 1 ? (
+                            <Center>
+                                <Image src={images[0]} alt={images[0]} />
+                            </Center>
+                        ) : (
+                            <Carousel images={images} />
+                        ))}
                 </Stack>
             </motion.div>
         </Center>

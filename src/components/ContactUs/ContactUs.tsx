@@ -4,8 +4,8 @@ import Layout from "../Layout/Layout";
 export default function ContactUs() {
     return (
         <Layout
-            backgroundColour="black"
-            textColour="white"
+            backgroundColour="white"
+            textColour="black"
             images={["ardant.png"]}
             id="contact-us"
         >
