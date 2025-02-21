@@ -35,6 +35,7 @@ export default function Header(props: BoxProps) {
                             md: "#000000b0",
                             base: "transparent",
                         }}
+                        alt={"Ardant Group"}
                     />
                     <IconButton
                         onClick={() => setShow(!show)}
