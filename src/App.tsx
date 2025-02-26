@@ -8,6 +8,7 @@ import PixelTrail from "./components/PixelTrail/PixelTrail";
 import PlanningAndDesign from "./components/PlanningAndDesign/PlanningAndDesign";
 import Residential from "./components/Residential/Residential";
 import Accreditations from "./components/Accreditations/Accreditations";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 interface PixelColourContextType {
     pixelColour: string;
@@ -46,17 +47,29 @@ export const PixelColourContextProvider: FC<
 
 function App() {
     return (
-        <PixelColourContextProvider>
-            <PixelTrail />
-            <Home />
-            <AboutUs />
-            <Residential />
-            <Commercial />
-            <PlanningAndDesign />
-            <Bespoke />
-            <Accreditations />
-            <ContactUs />
-        </PixelColourContextProvider>
+        <BrowserRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <PixelColourContextProvider>
+                            <PixelTrail />
+                            <Home />
+                            <AboutUs />
+                            <Residential />
+                            <Commercial />
+                            <PlanningAndDesign />
+                            <Bespoke />
+                            <Accreditations />
+                            <ContactUs />
+                        </PixelColourContextProvider>
+                    }
+                />
+
+                {/* Redirect all other routes to home */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+        </BrowserRouter>
     );
 }
 
