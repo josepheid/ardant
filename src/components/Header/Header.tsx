@@ -17,7 +17,7 @@ export default function Header(props: BoxProps) {
     return (
         <Box
             ref={ref}
-            backgroundColor={{ base: "#000000b0", md: "transparent" }}
+            backgroundColor={{ base: "black", md: "transparent" }}
             {...props}
             position={"fixed"}
             width={"100%"}
@@ -28,11 +28,11 @@ export default function Header(props: BoxProps) {
                     justifyContent={"space-between"}
                 >
                     <Image
-                        src={"ardant.png"}
+                        src={"logocrop.svg"}
                         height={"6rem"}
                         padding={"1rem"}
                         backgroundColor={{
-                            md: "#000000b0",
+                            md: "black",
                             base: "transparent",
                         }}
                         alt={"Ardant Group"}

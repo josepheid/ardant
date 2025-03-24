@@ -10,10 +10,8 @@ export default function Commercial() {
             backgroundColour="white"
             images={images}
             id="commercial"
+            title="COMMERCIAL"
         >
-            <Text as="h1" fontSize={"2rem"} pb="1rem">
-                COMMERCIAL
-            </Text>
             <Text fontSize={"1rem"}>
                 We have completed numerous office and industrial refurbishments
                 using a specialist approach tailored to every project,

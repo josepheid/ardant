@@ -1,4 +1,4 @@
-import { Text } from "@chakra-ui/react";
+import { Image, Text } from "@chakra-ui/react";
 import Layout from "../Layout/Layout";
 
 export default function AboutUs() {
@@ -6,13 +6,11 @@ export default function AboutUs() {
         <Layout
             backgroundColour="white"
             textColour="black"
-            images={["/ardant.png"]}
+            image={<Image src="logofull.svg" width={"100%"} m={"auto"} />}
             id="about-us"
+            title="ABOUT US"
         >
             <>
-                <Text as="h1" fontSize={"2rem"} pb="1rem">
-                    ABOUT US
-                </Text>
                 <Text fontSize={"1rem"}>
                     At Ardant Group LTD, we are more than just a construction
                     company—we are your dedicated partners in transforming

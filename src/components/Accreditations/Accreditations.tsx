@@ -37,21 +37,19 @@ export default function Accreditations() {
     ];
 
     return (
-        <Layout backgroundColour="black" textColour="white" id="accreditations">
+        <Layout
+            backgroundColour="black"
+            textColour="white"
+            id="accreditations"
+            title="ACCREDITATIONS"
+        >
             <>
-                <Text as="h1" fontSize={"2rem"} pb="1rem">
-                    ACCREDITATIONS
-                </Text>
                 <Text fontSize={"1rem"}>
                     We are proud to be accredited with Constructionline, Social
                     Value, and SSIP Acclaim. These qualifications underline our
                     strong commitment to quality, safety, and community impact.
                 </Text>
-                <SimpleGrid
-                    columns={{ base: 1, md: 3 }}
-                    spacing={8}
-                    my={"1rem"}
-                >
+                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
                     {accreditations.map((accreditation, index) => (
                         <Card
                             key={index}

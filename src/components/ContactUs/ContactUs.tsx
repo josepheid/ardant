@@ -1,4 +1,4 @@
-import { Link, Text } from "@chakra-ui/react";
+import { Image, Link, Text } from "@chakra-ui/react";
 import Layout from "../Layout/Layout";
 
 export default function ContactUs() {
@@ -6,13 +6,11 @@ export default function ContactUs() {
         <Layout
             backgroundColour="white"
             textColour="black"
-            images={["ardant.png"]}
+            image={<Image src="logofull.svg" />}
             id="contact-us"
+            title="CONTACT US"
         >
             <>
-                <Text as="h1" fontSize={"2rem"} pb="1rem">
-                    CONTACT US
-                </Text>
                 <Text fontSize={"1rem"}>
                     We'd love to hear from you! Whether you have questions about
                     our services, need support, or just want to share your

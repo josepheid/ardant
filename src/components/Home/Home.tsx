@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
     Box,
     IconButton,
@@ -17,7 +17,6 @@ import Slider from "react-slick";
 import Header from "../Header/Header";
 import { TransparentOverlay } from "../TransparentOverlay/TransparentOverlay";
 import { scroll } from "../../lib/helpers";
-import { PixelColourContext } from "../../App";
 // Settings for the slider
 const settings = {
     dots: false,
@@ -41,19 +40,19 @@ export default function Home() {
     const cards = [
         {
             title: "Residential.",
-            text: "We are residential construction specialists offering comprehensive pre-construction planning and expert execution. Our thorough approach includes handling permits, procurement, and detailed planning to prevent delays and cost overruns. During construction, our in-house teams and select subcontractors work under dedicated Project and Site Managers. We provide regular updates through in-person meetings, site visits, and an online project management system for real-time progress tracking.",
+            text: "We are residential construction specialists offering comprehensive pre-construction planning and expert execution. Our thorough approach includes handling permits, procurement, and detailed planning to prevent delays and cost overruns. During construction, our in-house teams and select subcontractors work under dedicated Project and Site Managers.",
             image: "livingroom.jpg",
             id: "#residential",
         },
         {
             title: "Commercial.",
-            text: "We have transformed numerous office and industrial spaces with a tailored approach that boosts productivity without relocating. Our process begins by examining your current fit-out to understand what satisfies your team, then aligning these insights with your project goals to craft a design that reflects your brand and enhances efficiency. With strong project management and a dedicated project manager, we handle refurbishments in occupied spaces by scheduling work outside normal hours and progressively handing back completed areas—all while ensuring minimal disruption, top-tier quality, and adherence to rigorous safety and environmental standards.",
+            text: "We have transformed numerous office and industrial spaces with a tailored approach that boosts productivity without relocating. Our process begins by examining your current fit-out to understand what satisfies your team, then aligning these insights with your project goals to craft a design that reflects your brand and enhances efficiency.",
             image: "office.jpg",
             id: "#commercial",
         },
         {
             title: "Planning and design.",
-            text: "Our dedicated design team expertly balances design precision with build feasibility while keeping costs manageable. Whether you're enhancing a single room or transforming an entire property, our process involves you every step of the way—from initial sketches to CAD drawings, 3D renders, and BIM models—ensuring a final result that truly reflects your vision. We also refine existing plans and offer comprehensive support with project feasibility, value engineering, upfront pricing advice, and procurement assistance.",
+            text: "Our dedicated design team expertly balances design precision with build feasibility while keeping costs manageable. Whether you're enhancing a single room or transforming an entire property, our process involves you every step of the way—from initial sketches to CAD drawings, 3D renders, and BIM models—ensuring a final result that truly reflects your vision.",
             image: "drawing.jpg",
             id: "#planning-and-design",
         },
@@ -66,7 +65,6 @@ export default function Home() {
     ];
 
     const [isHovered, setIsHovered] = useState(false);
-    const state = useContext(PixelColourContext);
 
     return (
         <>
@@ -78,7 +76,6 @@ export default function Home() {
                 overflow={"hidden"}
                 id="home"
                 position="relative"
-                onMouseEnter={() => state.setPixelColour("white")}
             >
                 {/* CSS files for react-slick */}
                 <link

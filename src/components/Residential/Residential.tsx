@@ -21,10 +21,8 @@ export default function Residential() {
             backgroundColour="black"
             images={images}
             id="residential"
+            title="RESIDENTIAL"
         >
-            <Text as="h1" fontSize={"2rem"} pb="1rem">
-                RESIDENTIAL
-            </Text>
             <Text fontSize={"1rem"}>
                 As a specialist in residential construction in London, our
                 process begins with comprehensive planning and pre-construction
