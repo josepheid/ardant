@@ -44,12 +44,12 @@ export default function Accreditations() {
             title="ACCREDITATIONS"
         >
             <>
-                <Text fontSize={"1rem"}>
+                <Text fontSize={{ base: "1rem", lg: "1.25rem" }}>
                     We are proud to be accredited with Constructionline, Social
                     Value, and SSIP Acclaim. These qualifications underline our
                     strong commitment to quality, safety, and community impact.
                 </Text>
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
+                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} my="1rem">
                     {accreditations.map((accreditation, index) => (
                         <Card
                             key={index}
@@ -94,7 +94,7 @@ export default function Accreditations() {
                         </Card>
                     ))}
                 </SimpleGrid>
-                <Text fontSize={"1rem"}>
+                <Text fontSize={{ base: "1rem", lg: "1.25rem" }}>
                     Together, these credentials not only strengthen our
                     reputation but also affirm our commitment to excellence and
                     responsible business practices.

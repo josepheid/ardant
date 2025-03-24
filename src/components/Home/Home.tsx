@@ -166,14 +166,14 @@ export default function Home() {
                                         fontSize={{
                                             base: "3xl",
                                             md: "4xl",
-                                            lg: "5xl",
+                                            lg: "6xl",
                                         }}
                                         color={"white"}
                                     >
                                         {card.title}
                                     </Heading>
                                     <Text
-                                        fontSize={{ base: "md", lg: "lg" }}
+                                        fontSize={{ base: "md", lg: "xl" }}
                                         color="white"
                                     >
                                         {card.text}

@@ -27,7 +27,7 @@ export default function Layout({
         <Center
             id={id}
             backgroundColor={backgroundColour}
-            py={{ base: "6rem", md: "2rem" }}
+            py={{ base: "6rem", md: "6rem" }}
             px={{ base: "1rem", md: "2rem" }}
             minHeight={"100vh"}
         >

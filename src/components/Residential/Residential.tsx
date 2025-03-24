@@ -23,7 +23,7 @@ export default function Residential() {
             id="residential"
             title="RESIDENTIAL"
         >
-            <Text fontSize={"1rem"}>
+            <Text fontSize={{ base: "1rem", lg: "1.25rem" }}>
                 As a specialist in residential construction in London, our
                 process begins with comprehensive planning and pre-construction
                 stages. This approach not only provides peace of mind but also
@@ -33,13 +33,13 @@ export default function Residential() {
                 strategies, our expert team meticulously ensures every detail is
                 accounted for.
             </Text>
-            <Text fontSize={"1rem"}>
+            <Text fontSize={{ base: "1rem", lg: "1.25rem" }}>
                 Our pre-construction services and systems are designed to
                 eliminate potential future time and cost challenges — a key
                 component for successful project delivery and managing
                 expectations in luxury property developments.
             </Text>
-            <Text fontSize={"1rem"}>
+            <Text fontSize={{ base: "1rem", lg: "1.25rem" }}>
                 Once construction commences, our skilled in-house tradesmen,
                 supported by a select group of subcontractors, take charge of
                 the build. Dedicated Project and Site Managers oversee the
